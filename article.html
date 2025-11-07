@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OASIS - Articles</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="nav_bar">
+        <a href="index.html">
+            <img src="Logo OASIS1.png" class="logo" alt="OASIS Logo" />
+        </a>
+        <p>Opening Awareness & Supports Inner Strength</p>
+        <div class="hr1"></div>
+
+        <nav class="nav_top">
+            <a href="index.html">Home</a>
+            <div class="dropdown_list">
+                <a href="article.html" class="active">Articles</a>
+                <div class="dropdown_menu">
+                    <a href="#depression">Depression</a>
+                    <div class="hr2"></div>
+                    <a href="#ptsd">PTSD</a>
+                    <div class="hr2"></div>
+                    <a href="#gallery">Gallery</a>
+                </div>
+            </div>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="side_bar">
+        <div class="left_bar">
+            <h2>Bookmarks</h2>
+            <ul>
+                <li><a href="#depression">Depression</a></li>
+                <li><a href="#ptsd">PTSD</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
+
+        <div class="survey_bar">
+            <h2>Survey</h2>
+            <div class="scroll survey-content">
+                <p>
+                    Hai Teman-teman! 👋🏻 Kami ingin tahu pandangan kalian tentang kesehatan mental,
+                    khususnya mengenai Depresi dan PTSD. Yuk bantu isi surveinya agar kita bisa saling memahami
+                    dan mendukung satu sama lain 💪🏻
+                </p>
+            </div>
+            <a href="https://forms.gle/1dguuapXG43hi6mu9" target="_blank" class="survey_btn">
+                Open here!
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content scroll">
+        <!-- Depression -->
+        <section id="depression" class="page-section">
+            <div class="section-content">
+                <h2>Understanding Depression</h2>
+                <p>
+                    <strong>Depression</strong> is a common but serious mood disorder that negatively affects how you
+                    feel, think, and act.
+                    It can lead to a variety of emotional and physical problems and can decrease your ability to
+                    function at work and at home.
+                </p>
+                <p>
+                    People experiencing depression may feel persistent sadness, hopelessness, or emptiness.
+                    They often lose interest in activities once enjoyed, have trouble sleeping or concentrating, and may
+                    experience changes in appetite or energy levels.
+                </p>
+                <h3>Causes of Depression</h3>
+                <ul>
+                    <li>Genetic factors or family history of mental illness.</li>
+                    <li>Prolonged stress, trauma, or difficult life experiences.</li>
+                    <li>Chemical imbalances in the brain affecting mood regulation.</li>
+                    <li>Substance abuse or chronic physical illness.</li>
+                </ul>
+                <h3>How to Cope & Seek Help</h3>
+                <p>
+                    Recovery is possible with the right support. Talking to trusted friends, joining support groups, and
+                    seeking professional
+                    help from psychologists or counselors are important steps. Regular exercise, balanced nutrition, and
+                    mindfulness
+                    practices can also improve mood and mental health.
+                </p>
+            </div>
+        </section>
+
+        <!-- PTSD -->
+        <section id="ptsd" class="page-section" style="background: linear-gradient(180deg, #f0faff, #e9e2ff);">
+            <div class="section-content">
+                <h2>Understanding PTSD (Post-Traumatic Stress Disorder)</h2>
+                <p>
+                    <strong>PTSD</strong> is a mental health condition triggered by experiencing or witnessing a
+                    traumatic event.
+                    While it’s normal to feel fear or sadness after trauma, people with PTSD may continue to experience
+                    intense,
+                    disturbing thoughts and feelings related to their experience long after the event has ended.
+                </p>
+                <h3>Common Symptoms</h3>
+                <ul>
+                    <li>Flashbacks, nightmares, or severe anxiety related to the traumatic event.</li>
+                    <li>Emotional numbness or avoidance of reminders of the trauma.</li>
+                    <li>Negative changes in mood, thoughts, or perception of safety.</li>
+                    <li>Being easily startled or having difficulty sleeping or concentrating.</li>
+                </ul>
+                <h3>Recovery and Treatment</h3>
+                <p>
+                    With the right treatment, individuals can regain control of their lives.
+                    Therapy (such as Cognitive Behavioral Therapy or EMDR) can help process the trauma safely.
+                    Support from family, friends, and community is also essential.
+                    Remember — seeking help is a sign of strength, not weakness 💚
+                </p>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="page-section" style="background-color: #fdf7ef;">
+            <div class="section-content">
+                <h2>Gallery — Mental Health Awareness</h2>
+                <p>Here are some visuals that represent hope, healing, and understanding around Depression and PTSD.</p>
+                <div class="gallery-grid">
+                    <img src="BEAR icon.png" alt="Finding Light in Darkness">
+                    <img src="BEAR icon.png" alt="PTSD Awareness Support">
+                    <img src="BEAR icon.png" alt="Healing Together">
+                    <img src="BEAR icon.png" alt="Mental Health Community">
+                    <img src="BEAR icon.png" alt="Mental Health Community">
+                    <img src="BEAR icon.png" alt="Mental Health Community">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SCRIPT (optional: efek scroll header tetap sama) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let lastScrollTop = 0;
+            const header = document.querySelector(".nav_bar");
+
+            window.addEventListener("scroll", function () {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop && scrollTop > 60) {
+                    header.classList.add("nav--scrolled");
+                } else if (scrollTop < lastScrollTop) {
+                    header.classList.remove("nav--scrolled");
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            });
+        });
+    </script>
+</body>
+
+</html>

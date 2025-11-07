@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OASIS - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="nav_bar">
+    <a href="index.html">
+      <img src="Logo OASIS1.png" class="logo" alt="OASIS Logo" />
+    </a>
+    <p>Opening Awareness & Supports Inner Strength</p>
+    <div class="hr1"></div>
+
+    <nav class="nav_top">
+      <a href="index.html">Home</a>
+
+      <div class="dropdown_list">
+        <!-- Klik Articles → langsung ke article.html -->
+        <a href="article.html">Articles</a>
+        <div class="dropdown_menu">
+          <!-- Dropdown → ke section tertentu di article.html -->
+          <a href="article.html#depression">Depression</a>
+          <div class="hr2"></div>
+          <a href="article.html#ptsd">PTSD</a>
+        </div>
+      </div>
+
+      <a href="profile.html">Profile</a>
+    </nav>
+
+  </header>
+
+  <aside class="side_bar">
+    <div class="left_bar">
+      <h2>Bookmarks</h2>
+      <ul>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Aims">Aims</a></li>
+        <li><a href="#VisionMission">Vision & Mission</a></li>
+      </ul>
+    </div>
+
+    <div class="survey_bar">
+      <h2>Survey</h2>
+      <div class="scroll survey-content">
+        <p>
+          Hai Teman-teman! 👋🏻 Pernah gasih kalian merasa kehilangan semangat,
+          sulit berkonsentrasi, atau benar-benar lelah secara fisik dan mental?
+          Kami dari Kelompok 1 STEAM Project X-6, ingin meminta bantuan teman-teman
+          untuk mengisi survei Kesehatan Mental Remaja tentang Depresi dan PTSD‼
+          Yuk, luangin waktu 1 menit buat isi ya! 🫵🏻
+        </p>
+      </div>
+      <a href="https://forms.gle/1dguuapXG43hi6mu9" target="_blank" class="survey_btn">
+        Open here!
+      </a>
+    </div>
+  </aside>
+
+  <main class="content scroll">
+    <section id="About" class="page-section about">
+      <div class="section-content">
+        <h2>About OASIS</h2>
+        <div class="img-icon" onclick="ToggleText()">
+          <img src="BEAR icon.png" alt="bear icon" />
+        </div>
+
+        <h3 id="click-hint" class="click-hint">Click the bear to learn more!</h3>
+
+        <div id="about-text" class="about-text" style="display: none;">
+          <p>
+            OASIS (Opening Awareness & Supports Inner Strength) adalah platform edukasi
+            yang berfokus pada peningkatan kesadaran dan dukungan terhadap kesehatan mental
+            remaja, khususnya mengenai Depresi dan PTSD.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="Aims" class="page-section">
+      <div class="section-content">
+        <h2>Aims</h2>
+        <ul>
+          <li>Meningkatkan kesadaran tentang pentingnya kesehatan mental.</li>
+          <li>Menyediakan informasi yang kredibel dan mudah diakses.</li>
+          <li>Menumbuhkan empati dan dukungan antar remaja.</li>
+          <li>Mendorong tindakan positif untuk menjaga kesejahteraan diri.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="VisionMission" class="page-section">
+      <div class="section-content vision">
+        <h2>Vision</h2>
+        <p>
+          Menjadi wadah edukatif dan inspiratif bagi remaja untuk mengenali, memahami,
+          dan menjaga kesehatan mental mereka.
+        </p>
+      </div>
+      <div class="section-content mission">
+        <h2>Mission</h2>
+        <p>
+          Menyediakan informasi yang akurat, memfasilitasi dukungan emosional, serta
+          membangun komunitas yang peduli terhadap kesehatan mental remaja.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // === Efek scroll pada header ===
+    document.addEventListener("DOMContentLoaded", () => {
+      let lastScrollTop = 0;
+      const header = document.querySelector(".nav_bar");
+
+      window.addEventListener("scroll", function () {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop && scrollTop > 60) {
+          header.classList.add("nav--scrolled");
+        } else if (scrollTop < lastScrollTop) {
+          header.classList.remove("nav--scrolled");
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      });
+    });
+
+    // === Toggle teks About OASIS ===
+    function ToggleText() {
+      const aboutText = document.getElementById("about-text");
+      const hint = document.getElementById("click-hint");
+
+      if (aboutText.style.display === "none") {
+        aboutText.style.display = "block";
+        hint.textContent = "Click again to hide";
+      } else {
+        aboutText.style.display = "none";
+        hint.textContent = "Click the bear to learn more!";
+      }
+    }
+  </script>
+
+</body>
+
+</html>
